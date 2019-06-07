@@ -1,0 +1,4 @@
+[dev]
+  command = "gulp serve" # Command to start the dev server
+  port = 8088 # Port for dev server
+  publish = "dist"

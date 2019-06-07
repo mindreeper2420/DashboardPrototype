@@ -1,0 +1,44 @@
+{
+  "name": "prototype-template",
+  "version": "0.12.0",
+  "description": "A template for creating prototypes",
+  "homepage": "https://www.adamjolicoeur.com/prototype-template",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp serve",
+    "build": "gulp"
+  },
+  "release": {
+    "branch": "master",
+    "tagFormat": "v${version}"
+  },
+  "keywords": [
+    "prototype",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mindreeper2420/prototype-template"
+  },
+  "author": "Adam J. Jolicoeur",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "autoprefixer": "9.5.1",
+    "browser-sync": "^2.24.6",
+    "cssnano": "4.1.10",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.4.0",
+    "gulp-header": "2.0.7",
+    "gulp-postcss": "8.0.0",
+    "gulp-pug": "4.0.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-sourcemaps": "2.6.5",
+    "semantic-release": "^15.13.14"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@patternfly/patternfly": "^2.8.2",
+    "natives": "^1.1.6"
+  }
+}
