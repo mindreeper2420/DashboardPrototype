@@ -16,26 +16,28 @@ var sourcemaps = require('gulp-sourcemaps');
 // remove this if you do not want banners automatically added to your compiled files
 //
 var banner = ['/*!\n',
-  ' * Prototype Template - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-  ' * Copyright 2018-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+  ' * Dashboard Prototype - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+  ' * Copyright 2019-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
   ' */\n',
   ''
 ].join('');
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   return gulp.src('sass/**/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(header(banner, { pkg: pkg }))
-  .pipe(gulp.dest('css'))
-  .pipe(browserSync.reload({
-    stream: true
-  }));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(header(banner, { pkg: pkg }))
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // @ts-ignore
-gulp.task('css', ['sass'], function() {
+gulp.task('css', ['sass'], function () {
+  const autoprefixer = require('autoprefixer')
+
   var plugins = [
-    autoprefixer({browsers: ['last 1 version']}),
+    autoprefixer(),
     cssnano()
   ];
   return gulp.src(['./css/site.css', './css/base.css'])
@@ -47,23 +49,23 @@ gulp.task('css', ['sass'], function() {
 });
 
 // compile custom javascript file
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp.src("dev/js/*.js")
-  .pipe(header(banner, { pkg: pkg }))
-  .pipe(gulp.dest('js'))
-  .pipe(browserSync.reload({
-    stream: true
-  }));
+    .pipe(header(banner, { pkg: pkg }))
+    .pipe(gulp.dest('js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // compile pug templates
 gulp.task('views', function () {
   return gulp.src('./src/*.pug')
-  .pipe(pug({
-    doctype: 'html',
-    pretty: true
-  }))
-  .pipe(gulp.dest('./'));
+    .pipe(pug({
+      doctype: 'html',
+      pretty: true
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 // Configure the browserSync task
@@ -101,7 +103,7 @@ gulp.task('copy-source', ['clean-dist'], function () {
 });
 
 gulp.task('clean-dist', function () {
-  return gulp.src("dist/", {read: false})
+  return gulp.src("dist/", { read: false })
     .pipe(clean());
 });
 
