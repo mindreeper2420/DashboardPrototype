@@ -16,6 +16,7 @@ $global-load-patternfly: true !default;
 @if $global-load-patternfly {
   @import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono');
   @import url('https://use.fontawesome.com/e57b847822.css');
+  @import url('patternfly-addons.css');
   @import url('patternfly.min.css');
   @import url('base.min.css');
 } @else {

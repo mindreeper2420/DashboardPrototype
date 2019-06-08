@@ -23,7 +23,7 @@ var banner = ['/*!\n',
 ].join('');
 
 gulp.task('sass', function () {
-  return gulp.src('sass/**/*.scss')
+  return gulp.src('sass/**/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(header(banner, { pkg: pkg }))
     .pipe(gulp.dest('css'))
@@ -96,6 +96,7 @@ gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./package.json').pipe(gulp.dest('./dist'));
   gulp.src('./manifest.json').pipe(gulp.dest('./dist'));
   gulp.src('./favicon.*').pipe(gulp.dest('./dist'));
+  gulp.src('./css/patternfly-addons.css').pipe(gulp.dest('./dist/css'));
   gulp.src('./css/*.min.css').pipe(gulp.dest('./dist/css'));
   gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
   gulp.src('./assets/**/*.*').pipe(gulp.dest('./dist/assets/'));

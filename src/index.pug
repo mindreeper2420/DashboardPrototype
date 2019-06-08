@@ -3,56 +3,72 @@ html(lang='en')
   include includes/header.pug
 
   body
-    h1.pf-screen-reader Prototype template
+    h1.pf-screen-reader Dashboard prototype
     .pf-c-page
       a.pf-c-skip-to-content.pf-c-button.pf-m-primary(href='#main-content-page-layout')
       include includes/navigation.pug
       main.pf-c-page__main(role='main')
         a#main-content-page-layout
-        section.pf-c-page__main-section.pf-m-light
-          .pf-c-content
-            h1 This background uses the white background
-            p All text is set to use the default text color.
-        section.pf-c-page__main-section
-          h1 This background uses the default background color
-          p All text is set to use the default text color.
-          .pf-l-gallery.pf-m-gutter
-            .pf-l-gallery__item
-              .pf-c-card
-                .pf-c-card__header This is a card header
-                .pf-c-card__body This is a card body with 14px font
-                .pf-c-card__footer This is a card footer (14px)
-            .pf-l-gallery__item
-              .pf-c-card
-                .pf-c-card__header This is a card header
-                .pf-u-pr-lg.pf-u-pb-lg.pf-u-pl-lg This is a card body with 16px font
-                .pf-c-card__footer This is a card footer (14px)
-        section.pf-c-page__main-section.pf-m-dark-200
-          h1 This background uses a dark background color
-          p All text is set to use the white text color.
-          .pf-l-gallery.pf-m-gutter
-            .pf-l-gallery__item
-              .pf-c-card
-                .pf-c-card__header This is a card header
-                .pf-c-card__body This is a card body with 14px font
-                .pf-c-card__footer This is a card footer (14px)
-            .pf-l-gallery__item
-              .pf-c-card
-                .pf-c-card__header This is a card header
-                .pf-u-pr-lg.pf-u-pb-lg.pf-u-pl-lg This is a card body with 16px font
-                .pf-c-card__footer This is a card footer (14px)
-        section.pf-c-page__main-section.pf-m-dark-100
-          h1 This background uses the darkest background color
-          p All text is set to use the white text color.
-          .pf-l-gallery.pf-m-gutter
-            .pf-l-gallery__item
-              .pf-c-card
-                .pf-c-card__header This is a card header
-                .pf-c-card__body This is a card body with 14px font
-                .pf-c-card__footer This is a card footer (14px)
-            .pf-l-gallery__item
-              .pf-c-card
-                .pf-c-card__header This is a card header
-                .pf-u-pr-lg.pf-u-pb-lg.pf-u-pl-lg This is a card body with 16px font
-                .pf-c-card__footer This is a card footer (14px)
-
+        section.pf-c-page__main-section.pf-m-light.pf-u-pb-0
+          .pf-c-content.pf-u-pb-lg
+            h1 Welcome to the Red Hat solution explorer
+            p With this application, you can develop, build and deploy enterprise integration solutions using the Red Hat integration portfolio to engage in agile, microservices-based application development.
+          .pf-c-tabs#primary
+            ul.pf-c-tabs__list
+              li.pf-c-tabs__item.pf-m-current
+                button.pf-c-tabs__button#primary-tab1 Applications
+              li.pf-c-tabs__item
+                button.pf-c-tabs__button#primary-tab2 Solution patterns
+        section.pf-c-page__main-section.pf-c-tab-content#primary-tab1(role="tabpanel", tabindex="0")
+          .pf-l-grid.pf-m-all-6-col-on-sm.pf-m-all-4-col-on-md.pf-m-all-2-col-on-lg.pf-m-all-1-col-on-xl
+            .pf-l-grid__item.pf-m-12-col
+              table.pf-c-table.pf-m-grid-lg#application-table(role="grid", aria-label="Applications datalist")
+                tbody
+                  tr
+                    td.pf-c-table__check
+                      i.fas.fa-exclamation-circle.status-alert__error(aria-hidden="true")
+                    td(data-table="Application status") Error
+                    th(data-label="Application name")
+                      div
+                        div#application-name1 Appicurito
+                        span APIs
+                    td(data-label="Application badge") Community
+                    td(data-label="Application version") v3.5
+                    td.pf-c-table__action.pf-u-text-align-right
+                      button.pf-c-button.pf-m-secondary Launch
+                  tr
+                    td.pf-c-table__check
+                      i.fas.fa-check-circle.status-alert__success(aria-hidden="true")
+                    td(data-table="Application status") Ready to use
+                    th(data-label="Application name")
+                      div
+                        div#application-name1 API management
+                        span Managed APIs
+                    td(data-label="Application badge")
+                    td(data-label="Application version") v4.1
+                    td.pf-c-table__action.pf-u-text-align-right
+                      button.pf-c-button.pf-m-secondary Launch
+                  tr
+                    td.pf-c-table__check
+                      i.fas.fa-check-circle.status-alert__success(aria-hidden="true")
+                    td(data-table="Application status") Ready to use
+                    th(data-label="Application name")
+                      div
+                        div#application-name1 Managed quality
+                        span Messaging service
+                    td(data-label="Application badge")
+                    td(data-label="Application version") v4.1
+                    td.pf-c-table__action.pf-u-text-align-right
+                      button.pf-c-button.pf-m-secondary Launch
+                  tr.status-alert__starting
+                    td.pf-c-table__check
+                      i.fas.fa-power-off(aria-hidden="true")
+                    td(data-table="Application status") Not ready
+                    th(data-label="Application name")
+                      div
+                        div#application-name1 Eclipse
+                        span Online editor
+                    td(data-label="Application badge") Community
+                    td(data-label="Application version") v1.2
+                    td.pf-c-table__action.pf-u-text-align-right
+                      button.pf-c-button.pf-m-link Start service
