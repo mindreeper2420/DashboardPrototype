@@ -93,7 +93,6 @@ gulp.task('sass-watch', ['css'], function (done) {
 // @ts-ignore
 gulp.task('copy-source', ['clean-dist'], function () {
   gulp.src('./README.md').pipe(gulp.dest('./dist'));
-  gulp.src('./package.json').pipe(gulp.dest('./dist'));
   gulp.src('./manifest.json').pipe(gulp.dest('./dist'));
   gulp.src('./favicon.*').pipe(gulp.dest('./dist'));
   gulp.src('./css/patternfly-addons.css').pipe(gulp.dest('./dist/css'));
