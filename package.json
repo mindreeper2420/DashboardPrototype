@@ -24,7 +24,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "gulp": "3.9.1",
-    "semantic-release": "^15.13.14"
+    "semantic-release": "^17.2.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
